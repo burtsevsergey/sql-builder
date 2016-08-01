@@ -228,16 +228,7 @@ class Insert extends Common\Insert
      */
     public function bindValue($name, $value)
     {
-        $value = $this->correctBindValue($value);
+        $value = Util::correctBindValue($value);
         return parent::bindValue($name, $value);
-    }
-
-    private function correctBindValue($value)
-    {
-        // cast date time
-        if ($value instanceof \DateTime) {
-            $value = $value->format('Y-m-d H:i:s');
-        }
-        return $value;
     }
 }
