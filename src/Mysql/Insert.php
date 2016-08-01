@@ -114,7 +114,7 @@ class Insert extends Common\Insert
         $this->col_on_update_values[$key] = ":$bind";
         $args = func_get_args();
         if (count($args) > 1) {
-            $this->bind_on_update_values[$bind] = $this->correctBindValue($args[1]);
+            $this->bind_on_update_values[$bind] = Util::correctBindValue($args[1]);
         }
         return $this;
     }
